@@ -1,4 +1,4 @@
-export class AuthCredentialsDto {
+export class AuthSignInCredentialsDto {
   username: string;
   password: string;
 }
