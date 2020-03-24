@@ -10,7 +10,7 @@ export class UserRepository extends Repository<User> {
   async signUp(authSignupCredentialsDto: AuthSignUpCredentialsDto): Promise<void> {
     const { username, password } = authSignupCredentialsDto;
 
-    const user = new User();
+    const user = this.create();
     user.username = username;
     user.salt =  await bcrypt.genSalt();
     user.password = await this.hashPassword(password, user.salt);
